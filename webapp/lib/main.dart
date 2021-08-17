@@ -4,6 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:webapp/constants/style.dart';
 import 'package:webapp/controllers/menu_controller.dart';
 import 'package:webapp/layout.dart';
+import 'package:webapp/pages/404/error_page.dart';
+import 'package:webapp/pages/authentification/authentification.dart';
+import 'package:webapp/routing/routes.dart';
 import 'controllers/navigation_controller.dart';
 
 void main() {
@@ -18,6 +21,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      initialRoute: AuthentificationPageRoute,
+      unknownRoute: GetPage(
+          name: "/error",
+          page: () => PageNotFound(),
+          transition: Transition.fadeIn),
+      getPages: [
+        GetPage(name: rootRoute, page: () => SiteLayout()),
+        GetPage(
+            name: AuthentificationPageRoute, page: () => AuthenticationPage())
+      ],
       debugShowCheckedModeBanner: false,
       title: 'Dash',
       theme: ThemeData(
@@ -30,7 +43,6 @@ class MyApp extends StatelessWidget {
         }),
         primaryColor: Colors.blue,
       ),
-      home: SiteLayout(),
     );
   }
 }

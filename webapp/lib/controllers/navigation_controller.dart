@@ -5,6 +5,7 @@ class NavigationController extends GetxController {
   static NavigationController instance = Get.find();
   final GlobalKey<NavigatorState> navigatorKey = GlobalKey();
 
+  // ignore: non_constant_identifier_names
   Future<dynamic> NavigateTo(String routeName) {
     return navigatorKey.currentState!.pushNamed(routeName);
   }

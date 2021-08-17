@@ -6,7 +6,7 @@ import 'package:webapp/routing/routes.dart';
 
 class MenuController extends GetxController {
   static MenuController instance = Get.find();
-  var activeItem = DefectedListePageRoute.obs;
+  var activeItem = DefectedListePageName.obs;
   var hoverItem = "".obs;
 
   changeActiveItemTo(String itemName) {
@@ -29,13 +29,13 @@ class MenuController extends GetxController {
 
   Widget returnIconFor(String itemName) {
     switch (itemName) {
-      case DefectedListePageRoute:
+      case DefectedListePageName:
         return _customIcon(Icons.warning_amber_outlined, itemName);
-      case StatisticsPageRoute:
+      case StatisticsPageName:
         return _customIcon(Icons.trending_up, itemName);
-      case ChecklistsPageRoute:
+      case ChecklistsPageName:
         return _customIcon(Icons.checklist, itemName);
-      case AuthentificationPageRoute:
+      case AuthentificationPageName:
         return _customIcon(Icons.exit_to_app, itemName);
       default:
         return _customIcon(Icons.exit_to_app, itemName);

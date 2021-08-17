@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webapp/constants/controllers.dart';
@@ -45,18 +43,20 @@ class SideMenu extends StatelessWidget {
           Column(
               mainAxisSize: MainAxisSize.min,
               children: sideMenuItems
-                  .map((itemName) => SideMenuItems(
-                        itemName: itemName == AuthentificationPageRoute
-                            ? "Logout"
-                            : itemName,
+                  .map((item) => SideMenuItems(
+                        itemName: item.name,
                         ontap: () {
-                          if (itemName == AuthenticatorAssertionResponse) {}
-                          if (!menuController.isActive(itemName)) {
-                            menuController.changeActiveItemTo(itemName);
+                          if (item.route == AuthentificationPageRoute) {
+                            menuController
+                                .changeActiveItemTo(DefectedListePageName);
+                            Get.offAllNamed(AuthentificationPageRoute);
+                          }
+                          if (!menuController.isActive(item.name)) {
+                            menuController.changeActiveItemTo(item.name);
                             if (Responsiveness.isSmall(context)) {
                               Get.back();
                             }
-                            navigationController.NavigateTo(itemName);
+                            navigationController.NavigateTo(item.route);
                           }
                         },
                       ))

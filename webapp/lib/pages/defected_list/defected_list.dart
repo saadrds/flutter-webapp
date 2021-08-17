@@ -15,7 +15,7 @@ class DefectedListPage extends StatelessWidget {
               height: 20,
             ),
             CustomText(
-                text: "saad",
+                text: "Defected List",
                 size: 18,
                 color: Colors.black,
                 weight: FontWeight.bold),
