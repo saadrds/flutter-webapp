@@ -16,6 +16,7 @@
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
   <meta name="description" content="A new Flutter project.">
+  <meta name="google-signin-client_id" content="2366459495-h3s2d3k2v4ck381khljqdj55p2jd0cg1.apps.googleusercontent.com">
 
   <!-- iOS meta tags & icons -->
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -94,5 +95,32 @@
       loadMainDartJs();
     }
   </script>
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBYgXCS_WceoYpBjF9JRv5qFp2K0K-gTRE",
+    authDomain: "defectedauth.firebaseapp.com",
+    projectId: "defectedauth",
+    storageBucket: "defectedauth.appspot.com",
+    messagingSenderId: "2366459495",
+    appId: "1:2366459495:web:73c08056c9f726a533cec2"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script defer src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+<script defer src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+
+// ...
+
+<script defer src="./init-firebase.js"></script>
 </body>
 </html>
